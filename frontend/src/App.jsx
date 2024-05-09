@@ -1,133 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Rating, Spinner } from 'flowbite-react';
+import React from 'react';
 
-const App = props => {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+// Definizione dell'array multidimensionale di actor
+const actors = [
+  { name: 'Marlon Brando',  imageUrl: 'https://m.media-amazon.com/images/M/MV5BMTg3MDYyMDE5OF5BMl5BanBnXkFtZTcwNjgyNTEzNA@@._V1_SX300.jpg'},
+  { name: 'Brad Pitt', imageUrl: 'https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_SX300.jpg' },
+  { name: 'Gillian Anderson',  imageUrl: 'https://m.media-amazon.com/images/M/MV5BMmRjNWQwMDQtMWNjZS00ZTUzLTkwODEtMTU5YjRlZmJiMTVkXkEyXkFqcGdeQXVyMTEzNjc3MDQ5._V1_SX300.jpg' }
+];
 
-  const fetchMovies = () => {
-    setLoading(true);
-
-    return fetch('http://localhost:8000/movies')
-      .then(response => response.json())
-      .then(data => {
-        setMovies(data);
-        setLoading(false);
-      });
-  }
-
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-
+//lista attori
+const ActorList = () => {
   return (
-    <Layout>
-      <Heading />
-
-      <MovieList loading={loading}>
-        {movies.map((item, key) => (
-          <MovieItem key={key} {...item} />
-        ))}
-      </MovieList>
-    </Layout>
-  );
-};
-
-const Layout = props => {
-  return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        {props.children}
-      </div>
-    </section>
-  );
-};
-
-const Heading = props => {
-  return (
-    <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-      <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-        Movie Collection
-      </h1>
-
-      <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-        Explore the whole collection of movies
-      </p>
-    </div>
-  );
-};
-
-const MovieList = props => {
-  if (props.loading) {
-    return (
-      <div className="text-center">
-        <Spinner size="xl" />
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid gap-4 md:gap-y-8 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3">
-      {props.children}
-    </div>
-  );
-};
-
-const MovieItem = props => {
-  return (
-    <div className="flex flex-col w-full h-full rounded-lg shadow-md lg:max-w-sm">
-      <div className="grow">
-        <img
-          className="object-cover w-full h-60 md:h-80"
-          src={props.imageUrl}
-          alt={props.title}
-          loading="lazy"
-        />
-      </div>
-
-      <div className="grow flex flex-col h-full p-3">
-        <div className="grow mb-3 last:mb-0">
-          {props.year || props.rating
-            ? <div className="flex justify-between align-middle text-gray-900 text-xs font-medium mb-2">
-                <span>{props.year}</span>
-
-                {props.rating
-                  ? <Rating>
-                      <Rating.Star />
-
-                      <span className="ml-0.5">
-                        {props.rating}
-                      </span>
-                    </Rating>
-                  : null
-                }
-              </div>
-            : null
-          }
-
-          <h3 className="text-gray-900 text-lg leading-tight font-semibold mb-1">
-            {props.title}
-          </h3>
-
-          <p className="text-gray-600 text-sm leading-normal mb-4 last:mb-0">
-            {props.plot.substr(0, 80)}...
-          </p>
+    <div>
+        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            Movie Collection
+            </h1>
+             <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+            Explore the whole collection of movies
+            </p>
         </div>
 
-        {props.wikipediaUrl
-          ? <Button
-              color="light"
-              size="xs"
-              className="w-full"
-              onClick={() => window.open(props.wikipediaUrl, '_blank')}
-            >
-              More
-            </Button>
-          : null
-        }
-      </div>
+
+            <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                    <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                         Actor List
+                    </h1>
+            </div>
+      <ul>
+        {/* iterazione */}
+        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+          {actors.map((actor, index) => (
+            <li>
+            <>
+              <section className="bg-white dark:bg-gray-900">
+                <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                  <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{actor.name}</h1>
+                    <img
+                    className="avatar"
+                    src={actor.imageUrl}
+                    alt={'Photo of ' + actor.name}
+                    style={{
+                      width: actor.imageSize,
+                      height: actor.imageSize
+                    }}
+                    />
+                  {/* <h2 >Categoria genere di film {actor.categoria_film}</h2>
+                  <h2>Rating {actor.rating}</h2> */}
+                </div>
+              </section>
+            </>
+            </li>
+          ))}
+          </div>
+      </ul>
     </div>
   );
 };
 
-export default App;
+export default ActorList;
+
+

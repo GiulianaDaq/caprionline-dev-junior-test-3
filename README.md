@@ -1,3 +1,14 @@
+#Ho difficoltà a creare un db psql a livello di installazione (a quanto pare và in conflitto con nodejs che stò usando per il corso laravel livewire)
+Quindi (per esercizio) ho creato un array con dei dati di film. 
+
+
+
+
+
+
+
+
+
 # Test di valutazione per candidati sviluppatori - Caprionline
 Benvenuto al nostro test di valutazione, progettato per misurare e comprendere le tue abilità pratiche come sviluppatore PHP e JavaScript. Attraverso questo esercizio, avrai l'opportunità di dimostrare la tua competenza nell'implementare funzionalità reali e rilevanti utilizzando una parte dei nostri stack tecnologici attuali.
 

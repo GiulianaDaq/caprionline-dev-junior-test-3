@@ -45,17 +45,17 @@ const FilmList = () => {
 
       <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
             <p className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Filter for category or rating
+            Filter for genre or rating
             </p>
       </div>
 
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <label htmlFor="rating">Rating:</label>
+          <label htmlFor="rating" className="mb-8 m-4">Rating:</label>
           <input type="text" id="rating" value={ratingFilter} onChange={(e) => setRatingFilter(e.target.value)} />
         </div>
 
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category"  className="m-4" >Genre:</label>
           <input type="text" id="category" value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)} />
         </div>
 

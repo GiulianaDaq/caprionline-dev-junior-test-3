@@ -120,24 +120,24 @@
 
 //             <li>
 //             <>
-//               <section className="bg-white dark:bg-gray-900">
-//                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-//                   <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{actor.name}</h1>
-//                     <img
-//                     className="avatar"
-//                     src={movie.imageUrl}
-//                     alt={'Photo of ' + movie.title_film}
-//                     style={{
-//                       width: movie.imageSize,
-//                       height: movie.imageSize
-//                     }}
-//                     />
-//                     <p>Descrizione film :</p>
-//                     <p>{movie.description}</p>
-//                   <h2 >Categoria genere di film {movie.categoria}</h2>
-//                   <h2>Rating {movie.rating}</h2>
-//                 </div>
-//               </section>
+              <section className="bg-white dark:bg-gray-900">
+                <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                  <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{actor.name}</h1>
+                    <img
+                    className="avatar"
+                    src={movie.imageUrl}
+                    alt={'Photo of ' + movie.title_film}
+                    style={{
+                      width: movie.imageSize,
+                      height: movie.imageSize
+                    }}
+                    />
+                    <p>Descrizione film :</p>
+                    <p>{movie.description}</p>
+                  <h2 >Categoria genere di film {movie.categoria}</h2>
+                  <h2>Rating {movie.rating}</h2>
+                </div>
+              </section>
 //             </>
 //             </li>
 //           ))}

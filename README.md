@@ -1,4 +1,6 @@
-#Ho difficoltà a creare un db psql a livello di installazione (a quanto pare và in conflitto con nodejs che stò usando per il corso laravel livewire)
+#Ho difficoltà a creare un db psql a livello di installazione (a quanto pare và in conflitto con nodejs che stò usando per il corso laravel livewire, ma dopo averlo installato non funzia nemmeno pgAdmin), volendo agire da terminale ovviamente non riconosce il comando psql anche avendolo settato nella variabile d'ambiente del pc.
+
+#Altra difficoltà per impostare il database:  phpMyAdmin: http://localhost:8080  non funziona 
 Quindi (per esercizio) ho creato un array con dei dati di film. 
 
 

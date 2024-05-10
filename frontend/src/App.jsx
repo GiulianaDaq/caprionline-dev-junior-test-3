@@ -1,3 +1,5 @@
+//filtri per rating e genre
+
 
 import React, { useState } from 'react';
 // Definizione dell'array multidimensionale dei film
@@ -11,8 +13,8 @@ const films = [
     {categoria:'Futuristico',rating:'2', title_film:'The Flash (film 2023)', imageUrl: 'https://m.media-amazon.com/images/M/MV5BMDFhZTc3NWQtY2UyZS00OGYzLTgxNTUtYjYxMjZjMmEyMjcwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg', description:'The Flash travels back in time to prevent the murder of his mother, an act which disrupts time significantly' }
   ];
 
-//lista attori
-const FilmList = () => {
+
+const App = () => {
     // Definizione dello stato per i filtri
     const [ratingFilter, setRatingFilter] = useState('');
     const [categoryFilter, setCategoryFilter] = useState('');
@@ -32,14 +34,7 @@ const FilmList = () => {
 
   return (
     <div>
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-            <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Movie Collection
-            </h1>
-             <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-            Explore the whole collection of movies
-            </p>
-        </div>
+        
 
       {/* Aggiungi i controlli per i filtri */}
 
@@ -95,45 +90,13 @@ const FilmList = () => {
           </div>
 
 
-        {/* fine filtri */}
-            <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                    <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                    Complete movie list
-                    </h1>
-            </div>
-      <ul>
-        {/* iterazione */}
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          {films.map((film, index) => (
-            <li>
-              <>
-              <section className="bg-white dark:bg-gray-900">
-                  <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                    <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{film.title_film}</h1>
-                      <img
-                      className="avatar"
-                      src={film.imageUrl}
-                      alt={'Photo of ' + film.title_film}
-                      style={{
-                        width: film.imageSize,
-                        height: film.imageSize
-                      }}
-                      />
-                    <h2 >Categoria genere di film {film.categoria}</h2>
-                    <h2>Rating {film.rating}</h2>
-                    <p>Descrizione</p>
-                    <p>{film.description}</p>
-                  </div>
-                </section>
-              </>
-            </li>
-          ))}
-        </div>
-      </ul>
+        
+           
+     
     </div>
   );
 };
 
-export default FilmList;
+export default App;
 
 

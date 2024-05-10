@@ -9,10 +9,8 @@ const App = props => {
     setLoading(true);
 
     return fetch('http://localhost:8000/movies')
-
-
-
-      .then(response => response.json())
+    //error localhost:8000 not found
+     .then(response => response.json())
       .then(data => {
         setMovies(data);
         setLoading(false);

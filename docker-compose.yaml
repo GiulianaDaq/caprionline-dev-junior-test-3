@@ -8,6 +8,17 @@ services:
     volumes:
       - .:/app
 
+ 
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: TheMovieDB
+
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine

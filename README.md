@@ -47,8 +47,8 @@ Client:
 Server:
 ERROR: error during connect: this error may indicate that the docker daemon is not running: Get "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.45/info": open //./pipe/docker_engine: Impossibile trovare il file specificato.
 errors pretty printing info
-PS C:\Users\domen\Desktop\capri\caprionline-dev-junior-test-3> 
-PS C:\Users\domen\Desktop\capri\caprionline-dev-junior-test-3>
+ 
+ error anche su wsl C:\Users\domen\Desktop\capri\caprionline-dev-junior-test-3\public\error\error wsl.png
 
 
 

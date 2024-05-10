@@ -7,7 +7,7 @@ services:
       - .:/app
     entrypoint: tail -f /dev/null
     environment:
-      - DATABASE_URL=mysql://root:mysql@mysql:3306/TheMovieDB?charset=utf8mb4&serverVersion=8.0.31
+      - DATABASE_URL=mysql://root:root@root:3306/TheMovieDB?charset=utf8mb4&serverVersion=8.0.31
 
   mysql:
     image: 'mysql:8.0.35'
@@ -16,10 +16,10 @@ services:
       - ./infra/volumes/mysql_data:/var/lib/mysql
     command: mysqld --sql_mode="NO_ENGINE_SUBSTITUTION"
     environment:
-      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=TheMovieDB
-      - MYSQL_USER=mysql
-      - MYSQL_PASSWORD=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
 
   phpmyadmin:
     image: phpmyadmin
@@ -31,4 +31,4 @@ services:
     environment:
       - PMA_HOST=mysql
       - PMA_USER=root
-      - PMA_PASSWORD=mysql
+      - PMA_PASSWORD=root

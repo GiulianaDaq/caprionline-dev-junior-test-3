@@ -10,6 +10,7 @@ const App = props => {
 
     return fetch('http://localhost:8000/movies')
     //error localhost:8000 not found
+    // anche phpAdmin 8080 error page not found
      .then(response => response.json())
       .then(data => {
         setMovies(data);

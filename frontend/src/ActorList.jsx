@@ -24,7 +24,8 @@ const ActorList = () => {
           {actors.map((actor, index) => (
             <li>
             <>
-              <section className="bg-white dark:bg-gray-900">
+            <section className="bg-white dark:bg-gray-900 border-double border-4 border-indigo-600 my-2">
+
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                   <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{actor.name}</h1>
                     <img
